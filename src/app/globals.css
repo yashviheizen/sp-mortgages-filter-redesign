@@ -1,0 +1,28 @@
+@import "tailwindcss";
+
+@theme inline {
+  --font-sans: var(--font-geist-sans);
+  --font-mono: var(--font-geist-mono);
+
+  /* SP Mortgages palette */
+  --color-navy-950: #0b1828;
+  --color-navy-900: #0f1f33;
+  --color-navy-800: #172a42;
+  --color-navy-700: #213753;
+  --color-navy-600: #2d4566;
+  --color-ink: #111827;
+}
+
+body {
+  background: #ffffff;
+  color: var(--color-ink);
+}
+
+/* Small entrance for popovers — no heavy motion */
+@keyframes pop-in {
+  from { opacity: 0; transform: translateY(-2px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+.pop-in { animation: pop-in 120ms ease-out; }
+
+input[type="date"]::-webkit-calendar-picker-indicator { opacity: 0.5; cursor: pointer; }
