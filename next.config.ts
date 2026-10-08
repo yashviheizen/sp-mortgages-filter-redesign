@@ -1,10 +1,11 @@
 import type { NextConfig } from "next";
 
+// Set in the GitHub Pages workflow: static export served under /<repo-name>.
+const basePath = process.env.PAGES_BASE_PATH;
+
 const nextConfig: NextConfig = {
-  /* config options here */
+  ...(basePath !== undefined && { output: "export", basePath, images: { unoptimized: true } }),
   devIndicators: false,
-  cacheComponents: true,
-  partialPrefetching: true,
   turbopack: {
     rules: {
       "*.css": {
